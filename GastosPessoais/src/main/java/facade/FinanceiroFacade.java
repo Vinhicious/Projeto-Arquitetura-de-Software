@@ -17,9 +17,10 @@ public class FinanceiroFacade {
     }
 
     public void registrarDespesa(double valor, String descricao) {
-        String categoria = estrategia.categorizar(new Despesa(valor, "", descricao));
-        Despesa despesa = new Despesa(valor, categoria, descricao);
-        despesaDAO.salvar(despesa);
-        orcamento.atualizarOrcamento(valor);
+       Despesa despesa = new Despesa(valor, "", descricao);
+       String categoria = estrategia.categorizar(despesa);
+       despesa.setCategoria(categoria);
+       despesaDAO.salvar(despesa);
+       orcamento.atualizarOrcamento(valor);
     }
 }
