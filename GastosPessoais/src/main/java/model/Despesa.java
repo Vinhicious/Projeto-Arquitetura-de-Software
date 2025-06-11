@@ -10,4 +10,8 @@ public class Despesa {
         this.categoria = categoria;
         this.descricao = descricao;
     }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
 }
